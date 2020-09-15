@@ -21,7 +21,7 @@
     "gulp-if": "^3.0.0",
     "lazypipe": "^1.0.2",
     "react": "^16.13.1",
-    "react-relay": "^0.0.0-experimental-8058ef82",
+    "react-relay": "^0.0.0-experimental-183bdd28",
     "relay-compiler": "^10.0.1",
     "relay-compiler-language-typescript": "^13.0.1",
     "relay-runtime": "^10.0.1",
