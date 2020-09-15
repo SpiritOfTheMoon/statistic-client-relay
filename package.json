@@ -1,5 +1,5 @@
 {
-  "name": "@umk/statistic-client-relay",
+  "name": "@umk-stat/statistic-client-relay",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
