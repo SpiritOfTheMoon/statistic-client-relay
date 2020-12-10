@@ -11,7 +11,6 @@ const fragment = graphql`
           id
           query
           date
-          result
           resultType
           perfomance
         }

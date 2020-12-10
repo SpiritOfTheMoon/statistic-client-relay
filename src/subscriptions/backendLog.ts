@@ -7,7 +7,6 @@ const subscription = graphql`
       backendLogSubscription(systemId: $systemId){
       id
       query
-      result
       resultType
       date
       login
