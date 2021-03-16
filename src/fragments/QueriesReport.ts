@@ -13,11 +13,10 @@ const fragment = graphql`
   {
     queriesReport(begin: $begin, end: $end) {
         query
-        count
-        average
     }
   }
 `;
+
 
 export const useQueriesReport = (
   tableLogsFragmentKey: QueriesReportFragmentTypes.QueriesReportFragment$key,

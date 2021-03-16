@@ -4,3 +4,4 @@ export* from "./Systems";
 export * from "./SystemResultTypeReport";
 export * from "./SystemQueriesReport";
 export * from "./SystemQueriesIntervalReport";
+export * from "./Target";

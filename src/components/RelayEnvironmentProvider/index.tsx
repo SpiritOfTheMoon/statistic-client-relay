@@ -2,7 +2,7 @@ import React from 'react';
 import { RelayEnvironmentProvider } from 'react-relay/hooks';
 import type {
   Props as ProviderProps,
-} from 'react-relay/lib/relay-experimental/RelayEnvironmentProvider';
+} from 'react-relay/relay-hooks/RelayEnvironmentProvider.react';
 import getRelayEnvironment from './environment';
 
 export type RelayEnvironmentProviderProps = {

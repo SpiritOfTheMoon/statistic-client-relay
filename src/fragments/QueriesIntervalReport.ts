@@ -16,8 +16,6 @@ const fragment = graphql`
         fromDate
         queries {
           query
-          count
-          average
         }
     }
   }
