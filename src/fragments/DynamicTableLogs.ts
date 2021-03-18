@@ -1,6 +1,6 @@
-import { graphql } from "react-relay";
-import * as DynamicTableLogsFragmentTypes from "./__generated__/DynamicTableLogsFragment.graphql";
-import { useFragment, } from "react-relay/hooks";
+import { graphql } from 'react-relay';
+import { useFragment } from 'react-relay/hooks';
+import * as DynamicTableLogsFragmentTypes from './__generated__/DynamicTableLogsFragment.graphql';
 
 const fragment = graphql`
   fragment DynamicTableLogsFragment on System {
@@ -24,6 +24,6 @@ export const useDynamicTableLogs = (
 ): DynamicTableLogsFragmentTypes.DynamicTableLogsFragment => {
   const queryData = useFragment(fragment, tableLogsFragmentKey);
   return queryData;
-}
+};
 
-export * as DynamicTableLogsFragmentTypes from "./__generated__/DynamicTableLogsFragment.graphql";
+export * as DynamicTableLogsFragmentTypes from './__generated__/DynamicTableLogsFragment.graphql';

@@ -1,6 +1,6 @@
-import { graphql } from "react-relay";
-import * as SystemQueriesReportQueryTypes from "./__generated__/SystemQueriesReportQuery.graphql";
-import { useLazyLoadQuery, } from "react-relay/hooks";
+import { graphql } from 'react-relay';
+import { useLazyLoadQuery } from 'react-relay/hooks';
+import * as SystemQueriesReportQueryTypes from './__generated__/SystemQueriesReportQuery.graphql';
 
 const query = graphql`
     query SystemQueriesReportQuery($systemId: String!) {
@@ -19,9 +19,9 @@ export const useSystemQueriesReport = (
   const queryData = useLazyLoadQuery<SystemQueriesReportQueryTypes.SystemQueriesReportQuery>(
     query,
     variables,
-    options
+    options,
   );
   return queryData;
-}
+};
 
-export * as SystemQueriesReportQueryTypes from "./__generated__/SystemQueriesReportQuery.graphql";
+export * as SystemQueriesReportQueryTypes from './__generated__/SystemQueriesReportQuery.graphql';

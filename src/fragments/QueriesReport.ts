@@ -1,7 +1,7 @@
-import { graphql } from "react-relay";
-import * as QueriesReportFragmentTypes from "./__generated__/QueriesReportFragment.graphql";
-import * as QueriesReportRefetchableQueryTypes from "./__generated__/QueriesReportRefetchableQuery.graphql";
-import { useRefetchableFragment } from "react-relay/hooks";
+import { graphql } from 'react-relay';
+import { useRefetchableFragment } from 'react-relay/hooks';
+import * as QueriesReportFragmentTypes from './__generated__/QueriesReportFragment.graphql';
+import * as QueriesReportRefetchableQueryTypes from './__generated__/QueriesReportRefetchableQuery.graphql';
 
 const fragment = graphql`
   fragment QueriesReportFragment on System 
@@ -17,13 +17,15 @@ const fragment = graphql`
   }
 `;
 
-
 export const useQueriesReport = (
   tableLogsFragmentKey: QueriesReportFragmentTypes.QueriesReportFragment$key,
 ): typeof queryData => {
-  const queryData = useRefetchableFragment<QueriesReportRefetchableQueryTypes.QueriesReportRefetchableQuery, QueriesReportFragmentTypes.QueriesReportFragment$key>(fragment, tableLogsFragmentKey);
+  const queryData = useRefetchableFragment<
+    QueriesReportRefetchableQueryTypes.QueriesReportRefetchableQuery,
+    QueriesReportFragmentTypes.QueriesReportFragment$key
+  >(fragment, tableLogsFragmentKey);
   return queryData;
-}
+};
 
-export * as QueriesReportFragmentTypes from "./__generated__/QueriesReportFragment.graphql";
-export * as QueriesReportRefetchableQueryTypes from "./__generated__/QueriesReportRefetchableQuery.graphql";
+export * as QueriesReportFragmentTypes from './__generated__/QueriesReportFragment.graphql';
+export * as QueriesReportRefetchableQueryTypes from './__generated__/QueriesReportRefetchableQuery.graphql';

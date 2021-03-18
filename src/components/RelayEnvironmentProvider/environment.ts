@@ -6,7 +6,7 @@ import {
   Network,
 } from 'relay-runtime';
 import getSubscribe from './subscribe';
-import getFetchQueryFunction from "./fetch";
+import getFetchQueryFunction from './fetch';
 
 const source = new RecordSource();
 const store = new Store(source);

@@ -1,7 +1,7 @@
-import { graphql } from "react-relay";
-import * as QueriesIntervalReportFragmentTypes from "./__generated__/QueriesIntervalReportFragment.graphql";
-import * as QueriesIntervalReportRefetchableQueryTypes from "./__generated__/QueriesIntervalReportRefetchableQuery.graphql";
-import { useRefetchableFragment } from "react-relay/hooks";
+import { graphql } from 'react-relay';
+import { useRefetchableFragment } from 'react-relay/hooks';
+import * as QueriesIntervalReportFragmentTypes from './__generated__/QueriesIntervalReportFragment.graphql';
+import * as QueriesIntervalReportRefetchableQueryTypes from './__generated__/QueriesIntervalReportRefetchableQuery.graphql';
 
 const fragment = graphql`
   fragment QueriesIntervalReportFragment on System 
@@ -24,9 +24,12 @@ const fragment = graphql`
 export const useQueriesIntervalReport = (
   tableLogsFragmentKey: QueriesIntervalReportFragmentTypes.QueriesIntervalReportFragment$key,
 ): typeof queryData => {
-  const queryData = useRefetchableFragment<QueriesIntervalReportRefetchableQueryTypes.QueriesIntervalReportRefetchableQuery, QueriesIntervalReportFragmentTypes.QueriesIntervalReportFragment$key>(fragment, tableLogsFragmentKey);
+  const queryData = useRefetchableFragment<
+    QueriesIntervalReportRefetchableQueryTypes.QueriesIntervalReportRefetchableQuery,
+    QueriesIntervalReportFragmentTypes.QueriesIntervalReportFragment$key
+  >(fragment, tableLogsFragmentKey);
   return queryData;
-}
+};
 
-export * as QueriesIntervalReportFragmentTypes from "./__generated__/QueriesIntervalReportFragment.graphql";
-export * as QueriesIntervalReportRefetchableQueryTypes from "./__generated__/QueriesIntervalReportRefetchableQuery.graphql";
+export * as QueriesIntervalReportFragmentTypes from './__generated__/QueriesIntervalReportFragment.graphql';
+export * as QueriesIntervalReportRefetchableQueryTypes from './__generated__/QueriesIntervalReportRefetchableQuery.graphql';

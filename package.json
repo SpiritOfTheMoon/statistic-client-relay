@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild-package": "relay-compiler --src ./src --schema ../../schema_statistic.gql --language typescript",
     "build-package": "umk-build",
-    "postbuild-package": "umk-build --relay"
+    "postbuild-package": "umk-build --relay",
+    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint --fix ./src --ext .js,.jsx,.ts,.tsx"
   },
   "author": "",
   "license": "ISC",

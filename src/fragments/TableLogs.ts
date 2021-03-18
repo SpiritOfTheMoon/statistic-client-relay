@@ -1,8 +1,7 @@
 import { graphql } from 'react-relay';
 import { usePaginationFragment } from 'react-relay/hooks';
-import * as TableLogsFragmentTypes from "./__generated__/TableLogsFragment.graphql";
-import * as TableLogsRefetchableQueryTypes from "./__generated__/TableLogsRefetchableQuery.graphql";
-
+import * as TableLogsFragmentTypes from './__generated__/TableLogsFragment.graphql';
+import * as TableLogsRefetchableQueryTypes from './__generated__/TableLogsRefetchableQuery.graphql';
 
 const fragment = graphql`
   fragment TableLogsFragment on System
@@ -45,11 +44,14 @@ const fragment = graphql`
   }
 `;
 
-export * as TableLogsFragmentTypes from "./__generated__/TableLogsFragment.graphql";
-export * as TableLogsRefetchableQueryTypes from "./__generated__/TableLogsRefetchableQuery.graphql";
+export * as TableLogsFragmentTypes from './__generated__/TableLogsFragment.graphql';
+export * as TableLogsRefetchableQueryTypes from './__generated__/TableLogsRefetchableQuery.graphql';
 export const useTableLogs = (
-    tableLogsFragmentRef: TableLogsFragmentTypes.TableLogsFragment$key
+  tableLogsFragmentRef: TableLogsFragmentTypes.TableLogsFragment$key,
 ): typeof data => {
-    const data = usePaginationFragment<TableLogsRefetchableQueryTypes.TableLogsRefetchableQuery, TableLogsFragmentTypes.TableLogsFragment$key>(fragment, tableLogsFragmentRef);
-    return data;
-}
+  const data = usePaginationFragment<
+    TableLogsRefetchableQueryTypes.TableLogsRefetchableQuery,
+    TableLogsFragmentTypes.TableLogsFragment$key
+  >(fragment, tableLogsFragmentRef);
+  return data;
+};

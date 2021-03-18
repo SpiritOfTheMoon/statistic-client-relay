@@ -1,6 +1,6 @@
-import { graphql } from "react-relay";
-import * as SystemDynamicTableLogsQueryTypes from "./__generated__/SystemDynamicTableLogsQuery.graphql";
-import { useLazyLoadQuery, } from "react-relay/hooks";
+import { graphql } from 'react-relay';
+import { useLazyLoadQuery } from 'react-relay/hooks';
+import * as SystemDynamicTableLogsQueryTypes from './__generated__/SystemDynamicTableLogsQuery.graphql';
 
 const query = graphql`
   query SystemDynamicTableLogsQuery($systemId: String!) {
@@ -19,9 +19,9 @@ export const useSystemDynamicTableLogs = (
   const queryData = useLazyLoadQuery<SystemDynamicTableLogsQueryTypes.SystemDynamicTableLogsQuery>(
     query,
     variables,
-    options
+    options,
   );
   return queryData;
-}
+};
 
-export * as SystemDynamicTableLogsQueryTypes from "./__generated__/SystemDynamicTableLogsQuery.graphql";
+export * as SystemDynamicTableLogsQueryTypes from './__generated__/SystemDynamicTableLogsQuery.graphql';

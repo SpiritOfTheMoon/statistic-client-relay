@@ -46,11 +46,10 @@ const getFetchQueryFunction = (endpoint: string): FetchFunction => async (
 
     const formData = new FormData();
     if (operation.text) {
-
       formData.append('operations', JSON.stringify({
         query: operation.text,
         variables,
-      }))
+      }));
 
       formData.append(
         'map',
@@ -59,19 +58,18 @@ const getFetchQueryFunction = (endpoint: string): FetchFunction => async (
             .reduce((prev, cur, index) => {
               prev[`${index}`] = [`variables.files.${index}`];
               return prev;
-            }, {} as Record<string, Array<string>>)),
+            }, {} as Record<string, Array<string>>),
+),
       );
-
     }
-    Object.keys(uploadables).forEach(key => {
+    Object.keys(uploadables).forEach((key) => {
       if (Object.prototype.hasOwnProperty.call(uploadables, key)) {
         formData.append(key, uploadables[key]);
       }
     });
 
-    requestConfig.headers = {}
+    requestConfig.headers = {};
     requestConfig.body = formData;
-
   }
 
   const response = await fetch(endpoint, requestConfig);
