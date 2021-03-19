@@ -4,3 +4,4 @@ export * from './TableLogs';
 export * from './QueriesReport';
 export * from './QueriesIntervalReport';
 export * from './Targets';
+export * from './Events';
