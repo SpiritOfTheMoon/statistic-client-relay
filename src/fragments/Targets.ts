@@ -8,6 +8,7 @@ const fragment = graphql`
     targets {
         id
         name
+        ...EventsFragment
     }
   }
 `;
