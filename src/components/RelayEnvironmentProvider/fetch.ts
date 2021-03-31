@@ -18,6 +18,8 @@ const getFetchQueryFunction = (endpoint: string): FetchFunction => async (
   const isMutation = operation.operationKind === 'mutation';
   const isQuery = operation.operationKind === 'query';
   const forceFetch = cacheConfig && cacheConfig.force;
+  console.log('aaaa');
+  console.log(cache);
   const fromCache = cache.get(queryID ?? '', variables);
   console.log('fromCache', fromCache);
   const requestConfig: RequestInit = {

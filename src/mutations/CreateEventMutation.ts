@@ -7,6 +7,7 @@ const mutation = graphql`
     createEvent(name: $name, targetID: $targetID) {
       id
       name
+      executionCount
     }
   }
 `;
