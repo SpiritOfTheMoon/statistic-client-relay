@@ -8,3 +8,4 @@ export * from './SystemTargets';
 export * from './Events';
 export * from './TargetEvents';
 export * from './ViewerEventEventss';
+export * from './Viewers';
