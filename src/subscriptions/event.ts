@@ -7,7 +7,8 @@ const subscription = graphql`
   subscription eventSubscription($targetID: String!) {
     eventSubscription(targetID: $targetID){
       id
-      name
+      viewerID
+      eventID
     }
   }
 `;
@@ -22,12 +23,15 @@ export const useEventSubscriptionSubscription = (
     const rootField = store.getRootField('eventSubscription');
     const storeProxy = store.get(config.variables.targetID);
 
+    const viewerID = rootField.getValue('viewerID');
+    const eventID = rootField.getValue('eventID');
+
     const targetEvents = storeProxy?.getLinkedRecords('events');
     if (targetEvents) {
-      const index = targetEvents.findIndex((element) => element.getDataID() === rootField.getDataID());
+      const index = targetEvents.findIndex((element) => element.getDataID() === eventID);
       if (index !== -1) {
-        const oldCount = targetEvents[index].getValue('executionCount') as number;
-        targetEvents[index].setValue(oldCount + 1, 'executionCount');
+        const viewerIds = targetEvents[index].getValue('viewerIds') as string[];
+        targetEvents[index].setValue([...viewerIds, viewerID] as string[], 'viewerIds');
       }
     }
   };

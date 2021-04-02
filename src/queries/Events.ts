@@ -7,7 +7,7 @@ const query = graphql`
     events {
       id
       name
-      executionCount
+      viewerIds
     }
   }
 `;

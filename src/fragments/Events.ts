@@ -8,7 +8,7 @@ const fragment = graphql`
     events {
         id
         name
-        executionCount
+        viewerIds
     }
   }
 `;

@@ -7,7 +7,8 @@ const subscription = graphql`
   subscription targetExecutionCountSubscription($systemID: String!) {
     targetExecutionCountSubscription(systemID: $systemID){
       id
-      name
+      eventID
+      viewerID
     }
   }
 `;
@@ -28,18 +29,26 @@ export const useTargetExecutionCountSubscription = (
         const targets = storeProxy.getLinkedRecords('targets');
         const currentTarget = targets?.find(
           (target) => target.getLinkedRecords('events')?.findIndex(
-            (event) => event.getValue('name') === rootField.getValue('name')
+            (event) => event.getDataID() === rootField.getValue('eventID')
               && event.getValue('deletedAt') === null,
           ),
         );
-        console.log(currentTarget?.getValue('name'));
         const targetEvents = currentTarget?.getLinkedRecords('events');
         if (currentTarget && targetEvents) {
-          const counts = targetEvents.map((event) => event.getValue('executionCount')) as number[];
-          const currentCount = currentTarget.getValue('executionCount');
-          console.log(counts);
-          console.log(currentTarget.getValue('executionCount'));
-          currentTarget.setValue(counts.length ? Math.min(...counts) : 0, 'executionCount');
+          const viewerIds = currentTarget.getValue('viewers') as string[];
+
+          let result = 0;
+          viewerIds.forEach((targetViewer) => {
+            let counter = Infinity;
+            targetEvents.forEach((event) => {
+              const eventViewers = event.getValue('viewerIds') as string[];
+              counter = Math.min(counter, eventViewers.filter((id) => id === targetViewer).length);
+            });
+            if (counter === Infinity) counter = 0;
+            result += counter;
+          });
+          console.log(result);
+          currentTarget.setValue(result, 'executionCount');
         }
       }
     };

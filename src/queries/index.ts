@@ -7,4 +7,3 @@ export * from './SystemQueriesIntervalReport';
 export * from './SystemTargets';
 export * from './Events';
 export * from './TargetEvents';
-export * from './ViewerEventEventss';
