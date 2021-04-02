@@ -30,7 +30,6 @@ const getFetchQueryFunction = (endpoint: string): FetchFunction => async (
       'Content-Type': 'application/json',
     },
   };
-  console.log('params', isQuery, fromCache, forceFetch, cacheConfig);
   if (isQuery && (fromCache !== null) && !forceFetch) {
     return fromCache;
   }

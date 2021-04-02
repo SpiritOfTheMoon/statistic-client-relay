@@ -7,6 +7,7 @@ const query = graphql`
     events {
       id
       name
+      viewerIds
     }
   }
 `;
